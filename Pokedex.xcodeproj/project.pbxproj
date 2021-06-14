@@ -9,21 +9,36 @@
 /* Begin PBXBuildFile section */
 		2BFD80042676B10400010AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD80032676B10400010AE6 /* AppDelegate.swift */; };
 		2BFD80062676B10400010AE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD80052676B10400010AE6 /* SceneDelegate.swift */; };
-		2BFD80082676B10400010AE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD80072676B10400010AE6 /* ViewController.swift */; };
-		2BFD800B2676B10400010AE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFD80092676B10400010AE6 /* Main.storyboard */; };
+		2BFD80082676B10400010AE6 /* PokemonListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD80072676B10400010AE6 /* PokemonListController.swift */; };
 		2BFD800D2676B10700010AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BFD800C2676B10700010AE6 /* Assets.xcassets */; };
 		2BFD80102676B10700010AE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFD800E2676B10700010AE6 /* LaunchScreen.storyboard */; };
+		2BFD801E2676B36F00010AE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFD801D2676B36F00010AE6 /* FirebaseAuth */; };
+		2BFD80202676B36F00010AE6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFD801F2676B36F00010AE6 /* FirebaseFirestore */; };
+		2BFD80222676B36F00010AE6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFD80212676B36F00010AE6 /* FirebaseStorage */; };
+		2BFD802426774DB600010AE6 /* PokemonListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD802326774DB500010AE6 /* PokemonListPresenter.swift */; };
+		2BFD802726774EBE00010AE6 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD802626774EBE00010AE6 /* PokemonCell.swift */; };
+		2BFD802926774F9F00010AE6 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD802826774F9F00010AE6 /* Pokemon.swift */; };
+		2BFD802B267753AD00010AE6 /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD802A267753AD00010AE6 /* PokeAPI.swift */; };
+		2BFD802E267754F200010AE6 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFD802D267754F200010AE6 /* Apollo */; };
+		2BFD8030267754F200010AE6 /* ApolloCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFD802F267754F200010AE6 /* ApolloCore */; };
+		2BFD8032267754F200010AE6 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFD8031267754F200010AE6 /* ApolloWebSocket */; };
+		2BFD8037267759E200010AE6 /* Pokemon.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 2BFD8036267759E200010AE6 /* Pokemon.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2BFD80002676B10400010AE6 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFD80032676B10400010AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BFD80052676B10400010AE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2BFD80072676B10400010AE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2BFD800A2676B10400010AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BFD80072676B10400010AE6 /* PokemonListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListController.swift; sourceTree = "<group>"; };
 		2BFD800C2676B10700010AE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BFD800F2676B10700010AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BFD80112676B10700010AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BFD802326774DB500010AE6 /* PokemonListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListPresenter.swift; sourceTree = "<group>"; };
+		2BFD802626774EBE00010AE6 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		2BFD802826774F9F00010AE6 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		2BFD802A267753AD00010AE6 /* PokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAPI.swift; sourceTree = "<group>"; };
+		2BFD80342677597100010AE6 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = schema.json; path = Pokedex/GraphQl/schema.json; sourceTree = SOURCE_ROOT; };
+		2BFD8036267759E200010AE6 /* Pokemon.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Pokemon.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFD801E2676B36F00010AE6 /* FirebaseAuth in Frameworks */,
+				2BFD8032267754F200010AE6 /* ApolloWebSocket in Frameworks */,
+				2BFD802E267754F200010AE6 /* Apollo in Frameworks */,
+				2BFD8030267754F200010AE6 /* ApolloCore in Frameworks */,
+				2BFD80202676B36F00010AE6 /* FirebaseFirestore in Frameworks */,
+				2BFD80222676B36F00010AE6 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +77,76 @@
 		2BFD80022676B10400010AE6 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				2BFD80032676B10400010AE6 /* AppDelegate.swift */,
-				2BFD80052676B10400010AE6 /* SceneDelegate.swift */,
-				2BFD80072676B10400010AE6 /* ViewController.swift */,
-				2BFD80092676B10400010AE6 /* Main.storyboard */,
+				2BFD8035267759BC00010AE6 /* GraphQL */,
+				2BFD802526774DF800010AE6 /* UserPage */,
+				2BFD80182676B18300010AE6 /* PokemonList */,
+				2BFD80172676B13E00010AE6 /* App */,
 				2BFD800C2676B10700010AE6 /* Assets.xcassets */,
 				2BFD800E2676B10700010AE6 /* LaunchScreen.storyboard */,
 				2BFD80112676B10700010AE6 /* Info.plist */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		2BFD80172676B13E00010AE6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD80032676B10400010AE6 /* AppDelegate.swift */,
+				2BFD80052676B10400010AE6 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2BFD80182676B18300010AE6 /* PokemonList */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD801B2676B19D00010AE6 /* Presenters */,
+				2BFD801A2676B19800010AE6 /* Views */,
+				2BFD80192676B19100010AE6 /* Models */,
+			);
+			path = PokemonList;
+			sourceTree = "<group>";
+		};
+		2BFD80192676B19100010AE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD802826774F9F00010AE6 /* Pokemon.swift */,
+				2BFD802A267753AD00010AE6 /* PokeAPI.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BFD801A2676B19800010AE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD80072676B10400010AE6 /* PokemonListController.swift */,
+				2BFD802626774EBE00010AE6 /* PokemonCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BFD801B2676B19D00010AE6 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD802326774DB500010AE6 /* PokemonListPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		2BFD802526774DF800010AE6 /* UserPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserPage;
+			sourceTree = "<group>";
+		};
+		2BFD8035267759BC00010AE6 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD8036267759E200010AE6 /* Pokemon.graphql */,
+				2BFD80342677597100010AE6 /* schema.json */,
+			);
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BFD80142676B10700010AE6 /* Build configuration list for PBXNativeTarget "Pokedex" */;
 			buildPhases = (
+				2BFD80332677551100010AE6 /* Apollo CLI */,
 				2BFD7FFC2676B10400010AE6 /* Sources */,
 				2BFD7FFD2676B10400010AE6 /* Frameworks */,
 				2BFD7FFE2676B10400010AE6 /* Resources */,
@@ -83,6 +166,14 @@
 			dependencies = (
 			);
 			name = Pokedex;
+			packageProductDependencies = (
+				2BFD801D2676B36F00010AE6 /* FirebaseAuth */,
+				2BFD801F2676B36F00010AE6 /* FirebaseFirestore */,
+				2BFD80212676B36F00010AE6 /* FirebaseStorage */,
+				2BFD802D267754F200010AE6 /* Apollo */,
+				2BFD802F267754F200010AE6 /* ApolloCore */,
+				2BFD8031267754F200010AE6 /* ApolloWebSocket */,
+			);
 			productName = Pokedex;
 			productReference = 2BFD80002676B10400010AE6 /* Pokedex.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +202,10 @@
 				Base,
 			);
 			mainGroup = 2BFD7FF72676B10400010AE6;
+			packageReferences = (
+				2BFD801C2676B36F00010AE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2BFD802C267754F200010AE6 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 2BFD80012676B10400010AE6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,34 +222,51 @@
 			files = (
 				2BFD80102676B10700010AE6 /* LaunchScreen.storyboard in Resources */,
 				2BFD800D2676B10700010AE6 /* Assets.xcassets in Resources */,
-				2BFD800B2676B10400010AE6 /* Main.storyboard in Resources */,
+				2BFD8037267759E200010AE6 /* Pokemon.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BFD80332677551100010AE6 /* Apollo CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"./GraphQL/schema.json\" GraphQL/API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://beta.pokeapi.co/graphql/v1beta\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2BFD7FFC2676B10400010AE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BFD80082676B10400010AE6 /* ViewController.swift in Sources */,
+				2BFD802726774EBE00010AE6 /* PokemonCell.swift in Sources */,
+				2BFD80082676B10400010AE6 /* PokemonListController.swift in Sources */,
+				2BFD802B267753AD00010AE6 /* PokeAPI.swift in Sources */,
+				2BFD802426774DB600010AE6 /* PokemonListPresenter.swift in Sources */,
 				2BFD80042676B10400010AE6 /* AppDelegate.swift in Sources */,
 				2BFD80062676B10400010AE6 /* SceneDelegate.swift in Sources */,
+				2BFD802926774F9F00010AE6 /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2BFD80092676B10400010AE6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2BFD800A2676B10400010AE6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2BFD800E2676B10700010AE6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -217,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,11 +403,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = Pokedex;
+				INFOPLIST_KEY_CFBundleName = Pokedex;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +433,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pokedex/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = Pokedex;
+				INFOPLIST_KEY_CFBundleName = Pokedex;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +476,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2BFD801C2676B36F00010AE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		2BFD802C267754F200010AE6 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2BFD801D2676B36F00010AE6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFD801C2676B36F00010AE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2BFD801F2676B36F00010AE6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFD801C2676B36F00010AE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2BFD80212676B36F00010AE6 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFD801C2676B36F00010AE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		2BFD802D267754F200010AE6 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFD802C267754F200010AE6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		2BFD802F267754F200010AE6 /* ApolloCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFD802C267754F200010AE6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCore;
+		};
+		2BFD8031267754F200010AE6 /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BFD802C267754F200010AE6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2BFD7FF82676B10400010AE6 /* Project object */;
 }
