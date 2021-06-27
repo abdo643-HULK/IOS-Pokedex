@@ -21,11 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window.windowScene = windowScene
 //		window.overrideUserInterfaceStyle = .dark
 		window.backgroundColor = .bgColor
-		window.tintColor = .bgColor
+		self.window = window
 
 		UIView.appearance().backgroundColor = .bgColor
-
-		self.window = window
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
