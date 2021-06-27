@@ -22,15 +22,35 @@ query partialGeneration($generation: String = "generation-i", $offset: Int = 0) 
 
 query pokemonDetails($id: Int!) {
 	pokemon: pokemon_v2_pokemon_by_pk(id: $id) {
+		name
+		height
+		weight
+		typeDetails: pokemon_v2_pokemontypes {
+			types: pokemon_v2_type {
+				name
+			}
+		}
+		abilities: pokemon_v2_pokemonabilities(order_by: { slot: asc_nulls_first }) {
+			slot
+			ability: pokemon_v2_ability {
+				name
+			}
+		}
+		stats: pokemon_v2_pokemonstats {
+			stat: pokemon_v2_stat {
+				name
+			}
+			base: base_stat
+		}
 		species: pokemon_v2_pokemonspecy {
-			name
 			generation: pokemon_v2_generation {
 				name
 			}
 			isLegendary: is_legendary
-			isMysthical: is_mythical
+			isMythical: is_mythical
 			captureRate: capture_rate
 			isFormSwitchable: forms_switchable
+			genderRate: gender_rate
 			hasGenderDiff: has_gender_differences
 			evolutions: pokemon_v2_evolutionchain {
 				info: pokemon_v2_pokemonspecies(order_by: { order: asc_nulls_first }) {
@@ -57,169 +77,50 @@ query pokemonDetails($id: Int!) {
 					}
 				}
 			}
-			pokedexDetails: pokemon_v2_pokemondexnumbers(
-				distinct_on: pokedex_id
-				where: { pokemon_v2_pokedex: { is_main_series: { _eq: true } } }
-			) {
-				pokedexDetails: pokemon_v2_pokedex {
-					pokedexName: pokemon_v2_pokedexnames(where: { language_id: { _eq: 9 } }) {
-						name
-					}
-					region: pokemon_v2_region {
-						generation: pokemon_v2_generations {
-							name
-						}
-					}
-				}
-				pokedexNumber: pokedex_number
-			}
 			pokeForms: pokemon_v2_pokemons(distinct_on: id, where: { id: { _neq: $id } }) {
 				id
 				name
 				height
 				weight
-				typeDetails: pokemon_v2_pokemontypes {
-					types: pokemon_v2_type {
-						name
-					}
-				}
 				formDetails: pokemon_v2_pokemonforms(
 					distinct_on: form_name
 					where: { form_name: { _neq: "" } }
 				) {
 					formName: form_name
 				}
-			}
-		}
-	}
-}
-
-query samplePokeAPIquery2 {
-	pokemon_v2_pokemon_by_pk(id: 3) {
-		... on pokemon_v2_pokemon {
-			name
-			pokemon_species_id
-			pokemon_v2_pokemonspecy {
-				gender_rate
-				is_legendary
-				is_mythical
-				pokemon_v2_pokemons(limit: 30) {
-					name
-					height
-					weight
-					order
-					base_experience
-					pokemon_species_id
-					pokemon_v2_pokemonspecy {
-						evolves_from_species_id
-						evolution_chain_id
-						pokemon_v2_pokemonevolutions(limit: 6) {
-							pokemon_v2_evolutiontrigger {
-								name
-							}
-						}
-					}
-					#pokemon_v2_pokemonmoves(limit: 20, order_by: {level: asc}) {
-					# level
-					#pokemon_v2_move {
-					# name
-					#accuracy
-					#}
-					#}
-					pokemon_v2_pokemonabilities(limit: 30) {
-						is_hidden
-						slot
-						ability: pokemon_v2_ability {
-							name
-						}
-					}
-					pokemon_v2_pokemontypes(limit: 10) {
-						pokemon_v2_type {
-							name
-						}
+				typeDetails: pokemon_v2_pokemontypes {
+					types: pokemon_v2_type {
+						name
 					}
 				}
-			}
-			pokemon_v2_pokemonforms(limit: 50) {
-				form_name
-				pokemon_id
-				form_order
-			}
-		}
-	}
-}
-
-query pokemon_details($name: String) {
-	species: pokemon_v2_pokemonspecies(where: { name: { _eq: $name } }) {
-		name
-		base_happiness
-		is_legendary
-		is_mythical
-		generation: pokemon_v2_generation {
-			name
-		}
-		habitat: pokemon_v2_pokemonhabitat {
-			name
-		}
-		pokemon: pokemon_v2_pokemons_aggregate(limit: 1) {
-			nodes {
-				height
-				name
-				id
-				weight
-				abilities: pokemon_v2_pokemonabilities_aggregate {
-					nodes {
-						ability: pokemon_v2_ability {
-							name
-						}
+				abilities: pokemon_v2_pokemonabilities(order_by: { slot: asc_nulls_first }) {
+					slot
+					ability: pokemon_v2_ability {
+						name
 					}
 				}
 				stats: pokemon_v2_pokemonstats {
-					base_stat
 					stat: pokemon_v2_stat {
 						name
 					}
-				}
-				types: pokemon_v2_pokemontypes {
-					slot
-					type: pokemon_v2_type {
-						name
-					}
-				}
-				levelUpMoves: pokemon_v2_pokemonmoves_aggregate(
-					where: { pokemon_v2_movelearnmethod: { name: { _eq: "level-up" } } }
-					distinct_on: move_id
-				) {
-					nodes {
-						move: pokemon_v2_move {
-							name
-						}
-						level
-					}
-				}
-				foundInAsManyPlaces: pokemon_v2_encounters_aggregate {
-					aggregate {
-						count
-					}
-				}
-				fireRedItems: pokemon_v2_pokemonitems(
-					where: { pokemon_v2_version: { name: { _eq: "firered" } } }
-				) {
-					pokemon_v2_item {
-						name
-						cost
-					}
-					rarity
+					base: base_stat
 				}
 			}
-		}
-		flavorText: pokemon_v2_pokemonspeciesflavortexts(
-			where: {
-				pokemon_v2_language: { name: { _eq: "en" } }
-				pokemon_v2_version: { name: { _eq: "firered" } }
-			}
-		) {
-			flavor_text
 		}
 	}
 }
+
+#   pokedexDetails: pokemon_v2_pokemondexnumbers(distinct_on: pokedex_id, where: {pokemon_v2_pokedex: {is_main_series: {_eq: true}}}) {
+#     pokedex: pokemon_v2_pokedex {
+#       pokedexName: pokemon_v2_pokedexnames(where: {language_id: {_eq: 9}}, order_by: {pokedex_id: asc_nulls_last}) {
+#         name
+#       }
+#       region: pokemon_v2_region {
+#         name
+#         generation: pokemon_v2_generations {
+#           name
+#         }
+#       }
+#     }
+#     pokedexNumber: pokedex_number
+#   }
