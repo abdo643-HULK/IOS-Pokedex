@@ -18,6 +18,7 @@ This App is a project for the SEI lecture. The App is a small pokedex. It shows 
 <!-- ![Charizards max Stats](/images/details_max.png) -->
 <img alt="Profilepage with email,password fields and login and signup button" src="./images/profile.png" width="210" height="450">
 </p>
+
 ## Problems
 
 ### Userpage/Profilepage
