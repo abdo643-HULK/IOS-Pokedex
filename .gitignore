@@ -1,4 +1,6 @@
 xcuserdata/
+GoogleService-Info.plist
+
 
 ## App packaging
 *.ipa
