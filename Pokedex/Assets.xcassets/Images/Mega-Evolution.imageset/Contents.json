@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Mega-Evolution-Sigil.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
