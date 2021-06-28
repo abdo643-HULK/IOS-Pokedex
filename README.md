@@ -7,15 +7,19 @@ This App is a project for the SEI lecture. The App is a small pokedex. It shows 
 ## Screenshots
 
 <p float="left">
-<!-- ![Pokemonlistpage](/images/list.png) -->
-<img alt="Pokemonlistpage" src="./images/list.png" width="210" height="450">
-<!-- ![Pokemondetailspage with charizard as Pokemon](/images/details.png) -->
-<img alt="Pokemondetailspage with charizard as Pokemon" src="./images/details.png" width="210" height="450">
+<!-- ![Pokemonlistpage](./images/list.png#thumbnail) -->
 
-<!-- ![Charizards max Stats](/images/details_max.png) -->
+<img alt="Pokemonlistpage" src="./images/list.png" width="210" height="450">
+
+<!-- ![Pokemondetailspage with charizard as Pokemon](./images/details.png#thumbnail) -->
+
+<img alt="Pokemondetailspage with charizard as Pokemon" src="./images/details.png" width="210" height="450">
+<!-- ![Charizards max Stats](./images/details_max.png#thumbnail) -->
+
 <img alt="Charizards max Stats" src="./images/details_max.png" width="210" height="450">
 
-<!-- ![Charizards max Stats](/images/details_max.png) -->
+<!-- ![Profilepage with email,password fields and login and signup button](./images/profile.png#thumbnail) -->
+
 <img alt="Profilepage with email,password fields and login and signup button" src="./images/profile.png" width="210" height="450">
 </p>
 
