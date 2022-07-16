@@ -28,7 +28,7 @@ class PokemonListController: UICollectionViewController {
 //		collectionView.prefetchDataSource = dataSource
 		displayActivityIndicatorView()
 
-		async {
+		Task {
 			await presenter.loadPokemon(generation: .gen1)
 			fetchedGen[0] = true
 			collectionView.reloadData()
@@ -88,7 +88,7 @@ class PokemonListController: UICollectionViewController {
 
 		if Double(indexPath.row) / Double(POKEMONS_PER_GEN[indexPath.section]) > 0.9, fetchedGen[con] == false {
 			fetchedGen[con] = true
-			async {
+			Task {
 				await presenter.loadPokemon(generation: PokeGenerations(rawValue: indexPath.section + 1) ?? .gen1)
 				collectionView.reloadData()
 			}
@@ -159,7 +159,9 @@ extension PokemonListController {
 			width = collectionView.frame.width
 			pokemonsPerRow = 2
 		} else {
-			let window = UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIApplication.shared.windows[0]
+//			let window = UIApplication.shared.windows.first { $0.isKeyWindow } ?? UIApplication.shared.windows[0]
+			guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.keyWindow
+			else { return }
 			let leftPadding = window.safeAreaInsets.left
 			let rightPadding = window.safeAreaInsets.right
 			width = collectionView.frame.width - leftPadding - rightPadding

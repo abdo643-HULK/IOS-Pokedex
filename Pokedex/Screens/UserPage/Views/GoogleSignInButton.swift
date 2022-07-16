@@ -8,23 +8,25 @@
 import UIKit
 import Foundation
 
-class GoogleSignInButton: UIButton {
-	private let imageBox: UIImageView = {
-		let img = UIImageView()
-
-		return img
-	}()
-
+final class GoogleSignInButton: UIButton {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
+
+		let googleColor = UIColor(named: "GoogleButton")!
+		let googleNormal = UIImage(named: "Google")!
+
 		self.clipsToBounds = true
-		self.layer.cornerRadius = 15
+		self.layer.cornerRadius = 10
+
+		self.backgroundColor = googleColor
 		self.setTitle("Sign in with Google", for: .normal)
-	}
-	
-	override func layoutSubviews() {
-		super.layoutSubviews()
+		self.setTitleColor(.black, for: .normal)
+		self.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 20)
+
+		self.imageView?.backgroundColor = googleColor
+		self.imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 50)
+		self.setImage(googleNormal, for: .normal)
+//		self.setImage(googleNormal, for: .highlighted)
 	}
 
 	@available(*, unavailable)

@@ -8,8 +8,6 @@
 import UIKit
 import Foundation
 
-private let cornerRadius: CGFloat = 15
-
 class UserPageController: UIViewController {
 	private let presenter = UserPagePresenter()
 
@@ -24,14 +22,20 @@ class UserPageController: UIViewController {
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		btn.setTitle("Sign In", for: .normal)
+		btn.setTitleColor(UIColor.offBlack, for: .normal)
+		btn.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+		btn.layer.cornerRadius = 15
+		btn.layer.borderWidth = 1
+		btn.addTarget(self, action: #selector(showLoginView), for: .touchUpInside)
 		return btn
 	}()
 
 	override func viewDidLoad() {
-		if presenter.user != nil {
-			showLoggedInScreen()
-		} else {
+		super.viewDidLoad()
+		if presenter.user == nil {
 			showLoggedOutScreen()
+		} else {
+			showLoggedInScreen()
 		}
 	}
 
@@ -48,13 +52,17 @@ class UserPageController: UIViewController {
 	}
 
 	private func showLoggedOutScreen() {
-		view.addSubview(signInBtn)
+//		view.addSubview(signInBtn)
+//		setupConstraints()
+		view = LoginView()
 	}
-	
-	private func setupConstraints(){
+
+	private func setupConstraints() {
 		NSLayoutConstraint.activate([
 			signInBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-			signInBtn.widthAnchor.constraint(equalToConstant: 270)
+			signInBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			signInBtn.widthAnchor.constraint(equalToConstant: 270),
+			signInBtn.heightAnchor.constraint(equalToConstant: 60),
 		])
 	}
 
@@ -63,7 +71,7 @@ class UserPageController: UIViewController {
 		let loginView = LoginViewController()
 		let nav = UINavigationController(rootViewController: loginView)
 		nav.modalPresentationStyle = .fullScreen
-		nav.present(loginView, animated: true, completion: nil)
+		navigationController?.present(nav, animated: true, completion: nil)
 	}
 
 	@objc

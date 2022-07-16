@@ -1,8 +1,8 @@
-# Pokedex - SEI Project
+# Pokedex - ADI Project
 
 ## Description
 
-This App is a project for the SEI lecture. The App is a small pokedex. It shows the pokemon in order and can also show some of the details. The project doesn't show all details of a pokemon because it needs more time.
+This App is a project for the ADI lecture. The App is a small pokedex. It shows the pokemon in order and can also show some of the details. The project doesn't show all details of a pokemon because it needs more time.
 
 ## Screenshots
 
@@ -23,13 +23,14 @@ This App is a project for the SEI lecture. The App is a small pokedex. It shows 
 <img alt="Profilepage with email,password fields and login and signup button" src="./images/profile.png" width="210" height="450">
 </p>
 
-## Problems
+## Issues
 
 ### Userpage/Profilepage
 
+Emulator:
+
 -   clicking on a textfield removes the window
 -   textfield doesn't show placeholder
--   compile errors when trying to add google sign in sdk
 
 ## Tasks
 
@@ -45,5 +46,5 @@ This App is a project for the SEI lecture. The App is a small pokedex. It shows 
 -   [ ] show weight,height,etc..
 -   [ ] show evolutionchain and trigger
 -   [ ] show forms if available
--   [ ] show species info
+-   [ ] show species-info
 -   [ ] show abilities

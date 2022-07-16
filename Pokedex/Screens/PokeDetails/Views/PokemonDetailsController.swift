@@ -41,7 +41,7 @@ class PokemonDetailsController: UIViewController { // , UITableViewDataSource, U
 
 		displayActivityIndicatorView()
 
-		async {
+		Task {
 			await presenter.getPokemonDetails(id: Int(id))
 			guard var pokemon = presenter.pokemon else {
 				return

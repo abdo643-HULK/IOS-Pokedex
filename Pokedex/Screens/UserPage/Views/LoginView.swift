@@ -8,10 +8,10 @@
 import UIKit
 import Foundation
 
-private let cornerRadius: CGFloat = 15
+private let cornerRadius: CGFloat = 10
 
-class LoginView: UIView {
-	private let emailField: UITextField = {
+final class LoginView: UIView {
+	public let emailField: UITextField = {
 		let field = UITextField()
 		field.translatesAutoresizingMaskIntoConstraints = false
 		field.placeholder = "Email"
@@ -19,13 +19,16 @@ class LoginView: UIView {
 		field.layer.borderWidth = 1
 		field.layer.cornerRadius = cornerRadius
 		field.keyboardType = .emailAddress
-		field.returnKeyType = .done
+		field.textContentType = .emailAddress
+		field.returnKeyType = .continue
 		field.backgroundColor = .blue
+		field.leftView = UIImageView(image: UIImage(systemName: "email"))
+		field.leftViewMode = .always
 
 		return field
 	}()
 
-	private let passwordField: UITextField = {
+	public let passwordField: UITextField = {
 		let field = UITextField()
 		field.translatesAutoresizingMaskIntoConstraints = false
 		field.isSecureTextEntry = true
@@ -36,27 +39,38 @@ class LoginView: UIView {
 		field.keyboardType = .default
 		field.returnKeyType = .done
 		field.backgroundColor = .blue
+		field.textContentType = .password
 
 		return field
 	}()
 
-	private let loginBtn: UIButton = {
+	public let loginBtn: UIButton = {
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		btn.setTitle("Log In", for: .normal)
 		btn.layer.cornerRadius = cornerRadius
 		btn.layer.masksToBounds = true
 		btn.backgroundColor = UIColor(named: "LoginBtnColors")
-		btn.addTarget(self, action: #selector(signIn), for: .touchUpInside)
 
 		return btn
 	}()
 
+	public let googleSignInBtn: GoogleSignInButton = {
+		let btn = GoogleSignInButton()
+		btn.translatesAutoresizingMaskIntoConstraints = false
+		return btn
+	}()
+
+	convenience init() {
+		self.init(frame: .zero)
+		setup()
+	}
+
 	public func setup() {
+		self.addSubview(loginBtn)
 		self.addSubview(emailField)
 		self.addSubview(passwordField)
-		self.addSubview(loginBtn)
-
+		self.addSubview(googleSignInBtn)
 		setupConstraints()
 	}
 
@@ -84,22 +98,19 @@ class LoginView: UIView {
 
 			googleSignInBtn.topAnchor.constraint(equalTo: loginBtn.bottomAnchor, constant: 20),
 			googleSignInBtn.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+			googleSignInBtn.heightAnchor.constraint(equalToConstant: btnHeight + 10),
+			googleSignInBtn.widthAnchor.constraint(equalToConstant: btnWidth + 100),
 		])
 	}
 
-	@objc
-	private func signIn() {
-		guard let email = emailField.text else { return }
-		guard let password = passwordField.text else { return }
-
-		if !presenter.isValidEmail(email), !presenter.isValidPassword(password) {
-			return
-		}
-
-		async {
-			displayActivityIndicatorView()
-			await presenter.signIn(email: email, password: password)
-			hideActivityIndicatorView()
-		}
+	private func textField(placeholder: String, symbolName: String) -> UITextField {
+		let textfield = UITextField()
+		textfield.backgroundColor = .secondarySystemBackground
+		textfield.layer.cornerRadius = cornerRadius
+		textfield.placeholder = placeholder
+		textfield.tintColor = .systemOrange
+		let symbol = UIImage(systemName: symbolName)
+		textfield.leftView = UIImageView(image: symbol)
+		return textfield
 	}
 }

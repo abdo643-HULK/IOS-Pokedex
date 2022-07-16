@@ -11,8 +11,7 @@ import Foundation
 private let cornerRadius: CGFloat = 15
 
 class SignUpView: UIView {
-	
-	private let emailField: UITextField = {
+	public let emailField: UITextField = {
 		let field = UITextField()
 		field.translatesAutoresizingMaskIntoConstraints = false
 		field.placeholder = "Email"
@@ -26,7 +25,7 @@ class SignUpView: UIView {
 		return field
 	}()
 
-	private let passwordField: UITextField = {
+	public let passwordField: UITextField = {
 		let field = UITextField()
 		field.translatesAutoresizingMaskIntoConstraints = false
 		field.isSecureTextEntry = true
@@ -41,7 +40,7 @@ class SignUpView: UIView {
 		return field
 	}()
 
-	private let signUpBtn: UIButton = {
+	public let signUpBtn: UIButton = {
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		btn.setTitle("Sign Up", for: .normal)
@@ -51,20 +50,4 @@ class SignUpView: UIView {
 
 		return btn
 	}()
-
-	@objc
-	private func signUp() {
-		guard let email = emailField.text else { return }
-		guard let password = passwordField.text else { return }
-
-		if !presenter.isValidEmail(email), !presenter.isValidPassword(password) {
-			return
-		}
-
-		async {
-			displayActivityIndicatorView()
-			await presenter.createUser(email: email, password: password)
-			hideActivityIndicatorView()
-		}
-	}
 }
